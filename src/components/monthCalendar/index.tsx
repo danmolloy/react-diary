@@ -1,0 +1,50 @@
+import { DateTime } from "luxon"
+import DaysHeader from "./daysHeader";
+import MonthHeader from "./header";
+import WeekRow from "./weekRow";
+
+export type EventObj = {
+  startTime: DateTime
+  title: string
+  id: string
+}
+
+export type MonthCalendarProps = {
+  selectedDate: DateTime
+  setSelectedDate: (arg: DateTime) => void
+  events?: EventObj[]
+}
+
+const getCalendarWeeks = (firstOfMonth: DateTime): DateTime[] => {
+  const firstWeekMonday = firstOfMonth.startOf('week');
+  const lastWeekMonday = firstOfMonth.endOf('month').startOf('week');
+  let weekArr: DateTime[] = []
+  let numWeeks: number = Math.ceil(lastWeekMonday.diff(firstWeekMonday, 'weeks').as('weeks'))
+
+  for (let i = 0; i <= numWeeks; i ++) {
+    weekArr = [...weekArr, firstWeekMonday.plus({weeks: i}).startOf("week")]
+  }
+  return weekArr
+}
+
+export default function MonthCalendar(props: MonthCalendarProps) {
+  const { selectedDate, setSelectedDate, events } = props;
+  //const [localDate, setLocalDate] = useState<DateTime>(DateTime.now())
+
+  return (
+    <table data-testid="month-calendar" className="w-full table-fixed ">
+     <MonthHeader selectedDate={selectedDate} setSelectedDate={(arg) => setSelectedDate(arg)} />
+      <DaysHeader />
+      <tbody className="">
+        {getCalendarWeeks(selectedDate.startOf('month')).map((i: DateTime) => (
+          <WeekRow 
+            events={events?.filter(j => j.startTime.hasSame(i, 'week'))}
+            key={i.toLocaleString()} 
+            weekStartDate={i} 
+            setSelectedDate={(arg) => setSelectedDate(arg)} 
+            selectedDate={selectedDate} />
+        ))}
+      </tbody>
+    </table>
+  )
+}

@@ -3,7 +3,8 @@ import typescript from "@rollup/plugin-typescript";
 import commonjs from "@rollup/plugin-commonjs";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
-import packageJson from "./package.json";
+import packageJson from "./package.json" with { type: "json" };
+
 export default [
   {
     input: "src/index.ts",

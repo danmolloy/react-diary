@@ -23,6 +23,7 @@
     "build": "rollup -c",
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "eslint",
+    "prepare": "yarn build",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

@@ -19,9 +19,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: Publish to npm
-        run: npm publish --access public
+        run: yarn publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.REACT_EVENT_CALENDAR}}

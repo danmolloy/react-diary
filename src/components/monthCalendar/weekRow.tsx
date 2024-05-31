@@ -1,12 +1,11 @@
 import { DateTime } from "luxon"
 import DayOfMonth from "./dayOfMonth";
-import { EventObj } from ".";
 
 export type WeekRowProps = {
   weekStartDate: DateTime
   selectedDate: DateTime
   setSelectedDate: (arg: DateTime) => void
-  events?: EventObj[]
+  events?: EventObject[]
 };
 
 export const weekArr = (weekStartDate: DateTime): DateTime[] => {

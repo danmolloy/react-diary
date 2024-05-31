@@ -1,11 +1,10 @@
 import { DateTime } from "luxon";
-import { EventObj } from ".";
 
 export type DayOfMonthProps = {
   selectedDate: DateTime
   setSelectedDate: (args: DateTime) => void
   dayOfMonthDate: DateTime
-  events?: EventObj[]
+  events?: EventObject[]
 };
 
 export default function DayOfMonth(props: DayOfMonthProps) {

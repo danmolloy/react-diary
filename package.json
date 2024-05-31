@@ -3,7 +3,7 @@
     "registry": "https://npm.pkg.github.com/@danmolloy"
   },
   "name": "react-diary",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/cjs/index.js",
   "types": "dist/index.d.ts",
   "module": "dist/esm/index.js",

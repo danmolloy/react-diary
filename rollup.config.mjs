@@ -4,6 +4,8 @@ import commonjs from "@rollup/plugin-commonjs";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
 import packageJson from "./package.json" with { type: "json" };
+import tailwind from 'tailwindcss'
+import autoprefixer from "autoprefixer";
 
 export default [
   {
@@ -30,7 +32,13 @@ export default [
         tsconfig: "./tsconfig.json",
         exclude: ["**/*.test.tsx", "**/*.test.ts", "**/*.stories.ts"],
       }),
-      postcss({ extensions: [".css"], inject: true, extract: false }),
+      postcss({
+        plugins: [
+          tailwind(),
+          autoprefixer()
+        ],
+        extract: true, // Extract CSS to a separate file
+      }),
     ],
     external: ["react", "react-dom", "react/jsx-runtime"],
   },

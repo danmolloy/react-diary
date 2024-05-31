@@ -2,7 +2,6 @@ import { DateTime } from "luxon"
 import DaysHeader from "./daysHeader";
 import MonthHeader from "./header";
 import WeekRow from "./weekRow";
-import '../../styles/index.css';
 
 const getCalendarWeeks = (firstOfMonth: DateTime): DateTime[] => {
   const firstWeekMonday = firstOfMonth.startOf('week');

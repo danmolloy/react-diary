@@ -2,6 +2,7 @@ import { DateTime } from "luxon"
 import DaysHeader from "./daysHeader";
 import MonthHeader from "./header";
 import WeekRow from "./weekRow";
+import '../../styles/index.css';
 
 const getCalendarWeeks = (firstOfMonth: DateTime): DateTime[] => {
   const firstWeekMonday = firstOfMonth.startOf('week');
@@ -26,7 +27,7 @@ export default function MonthCalendar(props: MonthCalendarProps): JSX.Element {
       <tbody className="">
         {getCalendarWeeks(DateTime.fromJSDate(selectedDate).startOf('month')).map((i: DateTime) => (
           <WeekRow 
-            events={events?.filter(j => DateTime.fromJSDate(j.startTime).hasSame(i, 'week'))}
+            events={events?.map(event => ({...event, startTime: DateTime.fromJSDate(event.startTime)})).filter(j => j.startTime.hasSame(i, 'week'))}
             key={i.toLocaleString()} 
             weekStartDate={i} 
             setSelectedDate={(arg) => setSelectedDate(arg.toJSDate())} 

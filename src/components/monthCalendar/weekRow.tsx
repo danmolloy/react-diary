@@ -5,7 +5,11 @@ export type WeekRowProps = {
   weekStartDate: DateTime
   selectedDate: DateTime
   setSelectedDate: (arg: DateTime) => void
-  events?: EventObject[]
+  events?: {
+    startTime: DateTime
+    title: string
+    id: string
+  }[]
 };
 
 export const weekArr = (weekStartDate: DateTime): DateTime[] => {
@@ -22,7 +26,7 @@ export default function WeekRow(props: WeekRowProps) {
   return (
     <tr data-testid={`week-${weekStartDate.weekNumber}-row`}>
       {weekArr(weekStartDate).map(i => (
-        <DayOfMonth events={events?.filter(j => DateTime.fromJSDate(j.startTime).hasSame(i, 'day'))} key={i.toLocaleString()} selectedDate={selectedDate} setSelectedDate={setSelectedDate} dayOfMonthDate={i} />
+        <DayOfMonth events={events?.filter(j => j.startTime.hasSame(i, 'day'))} key={i.toLocaleString()} selectedDate={selectedDate} setSelectedDate={setSelectedDate} dayOfMonthDate={i} />
       ))}
     </tr>
   )

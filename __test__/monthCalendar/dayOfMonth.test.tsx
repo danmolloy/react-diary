@@ -47,12 +47,12 @@ describe("<DayOfMonth />", () => {
     dayOfMonthDate: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")),
     events: [
       {
-        startTime: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")),
+        startTime: new Date("1986-10-13T01:43:00"),
         title: "CLM is born",
         id: "id-1",
       },
       {
-        startTime: DateTime.fromJSDate(new Date("1986-10-13T01:42:00")),
+        startTime: new Date("1986-10-13T01:42:00"),
         title: "Dad goes to the toilet",
         id: "id-2",
       },

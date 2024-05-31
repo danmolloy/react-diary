@@ -39,12 +39,12 @@ describe("<WeekRow />", () => {
     setSelectedDate: jest.fn(),
     events: [
       {
-        startTime: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")),
+        startTime: new Date("1986-10-13T01:43:00"),
         title: "CLM is born",
         id: "id-1",
       },
       {
-        startTime: DateTime.fromJSDate(new Date("1986-10-14T10:40:00")),
+        startTime: new Date("1986-10-14T10:40:00"),
         title: "Jerry Seinfeld does stand up",
         id: "id-2",
       },

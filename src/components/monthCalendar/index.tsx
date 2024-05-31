@@ -21,16 +21,16 @@ export default function MonthCalendar(props: MonthCalendarProps): JSX.Element {
 
   return (
     <table data-testid="month-calendar" className="w-full table-fixed ">
-     <MonthHeader selectedDate={selectedDate} setSelectedDate={(arg) => setSelectedDate(arg)} />
+     <MonthHeader selectedDate={DateTime.fromJSDate(selectedDate)} setSelectedDate={(arg) => setSelectedDate(arg.toJSDate())} />
       <DaysHeader />
       <tbody className="">
-        {getCalendarWeeks(selectedDate.startOf('month')).map((i: DateTime) => (
+        {getCalendarWeeks(DateTime.fromJSDate(selectedDate).startOf('month')).map((i: DateTime) => (
           <WeekRow 
-            events={events?.filter(j => j.startTime.hasSame(i, 'week'))}
+            events={events?.filter(j => DateTime.fromJSDate(j.startTime).hasSame(i, 'week'))}
             key={i.toLocaleString()} 
             weekStartDate={i} 
-            setSelectedDate={(arg) => setSelectedDate(arg)} 
-            selectedDate={selectedDate} />
+            setSelectedDate={(arg) => setSelectedDate(arg.toJSDate())} 
+            selectedDate={DateTime.fromJSDate(selectedDate)} />
         ))}
       </tbody>
     </table>

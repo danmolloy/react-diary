@@ -2,7 +2,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@danmolloy"
   },
-  "name": "@danmolloy/react-event-calendar",
+  "name": "react-diary",
   "version": "1.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

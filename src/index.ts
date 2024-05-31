@@ -1,2 +1,4 @@
-export { default as IndexComponent } from "./components";
+import MonthCalendar from "./components/monthCalendar";
+
+export { MonthCalendar };
 

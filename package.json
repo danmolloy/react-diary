@@ -3,7 +3,7 @@
     "registry": "https://npm.pkg.github.com/@danmolloy"
   },
   "name": "react-diary",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "babel": {
@@ -31,6 +31,10 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "dependencies": {
+    "luxon": "^3.4.4",
+    "@types/luxon": "^3"
+  },
   "devDependencies": {
     "@babel/core": "^7.24.6",
     "@babel/preset-env": "^7.24.6",
@@ -52,7 +56,6 @@
     "@testing-library/react": "^15.0.7",
     "@types/babel__core": "^7",
     "@types/jest": "^29.5.12",
-    "@types/luxon": "^3",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",

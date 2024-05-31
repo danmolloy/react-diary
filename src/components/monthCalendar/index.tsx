@@ -3,18 +3,6 @@ import DaysHeader from "./daysHeader";
 import MonthHeader from "./header";
 import WeekRow from "./weekRow";
 
-export type EventObj = {
-  startTime: DateTime
-  title: string
-  id: string
-}
-
-export type MonthCalendarProps = {
-  selectedDate: DateTime
-  setSelectedDate: (arg: DateTime) => void
-  events?: EventObj[]
-}
-
 const getCalendarWeeks = (firstOfMonth: DateTime): DateTime[] => {
   const firstWeekMonday = firstOfMonth.startOf('week');
   const lastWeekMonday = firstOfMonth.endOf('month').startOf('week');
@@ -27,7 +15,7 @@ const getCalendarWeeks = (firstOfMonth: DateTime): DateTime[] => {
   return weekArr
 }
 
-export default function MonthCalendar(props: MonthCalendarProps) {
+export default function MonthCalendar(props: MonthCalendarProps): JSX.Element {
   const { selectedDate, setSelectedDate, events } = props;
   //const [localDate, setLocalDate] = useState<DateTime>(DateTime.now())
 

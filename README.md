@@ -1,4 +1,4 @@
-# React Event Calendar
+# React Diary
 
 ## Installation
 

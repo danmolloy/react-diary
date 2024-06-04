@@ -32,12 +32,17 @@ export default [
         tsconfig: "./tsconfig.json",
         exclude: ["**/*.test.tsx", "**/*.test.ts", "**/*.stories.ts"],
       }),
+      tailwind(),
+      autoprefixer(),
       postcss({
-        plugins: [
-          tailwind(),
-          autoprefixer()
-        ],
-        extract: true, // Extract CSS to a separate file
+        config: {
+          path: "./postcss.config.js",
+        },
+        extensions: [".css"],
+        minimize: true,
+        inject: {
+          insertAt: "top",
+        },
       }),
     ],
     external: ["react", "react-dom", "react/jsx-runtime"],

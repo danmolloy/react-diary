@@ -32,12 +32,14 @@ export default [
         tsconfig: "./tsconfig.json",
         exclude: ["**/*.test.tsx", "**/*.test.ts", "**/*.stories.ts"],
       }),
-      tailwind(),
-      autoprefixer(),
       postcss({
         config: {
           path: "./postcss.config.js",
         },
+        plugins: [
+          tailwind(),
+          autoprefixer(),
+        ],
         extensions: [".css"],
         minimize: true,
         inject: {

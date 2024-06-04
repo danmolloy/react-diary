@@ -34,7 +34,7 @@ export default function DaysHeader() {
     <thead data-testid="days-header">
       <tr>
       {daysArr.map(i => (
-        <th key={i.key} className="border text-sm font-medium text-gray-500">
+        <th key={i.key} className="border ">
           {i.day.slice(0, 3)}
         </th>
       ))}

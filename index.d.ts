@@ -1,5 +1,5 @@
-import { DateTime } from "luxon"
-
+//import { DateTime } from "luxon"
+/* 
 declare global {
   type EventObject = {
     startTime: Date
@@ -10,13 +10,13 @@ declare global {
   type MonthCalendarProps = {
     selectedDate: Date
     setSelectedDate: (arg: Date) => void
-    events?: {
+    events: {
       startTime: Date
       title: string
       id: string
       }[]
   }
-}
+} */
 
 
-export { EventObject as Event, MonthCalendarProps };
+//export { EventObject as Event, MonthCalendarProps };

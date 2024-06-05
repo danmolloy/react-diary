@@ -49,6 +49,51 @@ export const NotSelectedDay: Story = {
       startTime: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")), 
       title: "CLM is born",
       id: "sb-1"
+    },
+    {
+      startTime: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")), 
+      title: "CLM is born",
+      id: "sb-2"
+    },
+    {
+      startTime: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")), 
+      title: "CLM is born",
+      id: "sb-3"
+    },
+    {
+      startTime: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")), 
+      title: "CLM is born",
+      id: "sb-4"
+    },
+    {
+      startTime: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")), 
+      title: "CLM is born",
+      id: "sb-5"
+    },
+    {
+      startTime: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")), 
+      title: "CLM is born",
+      id: "sb-6"
+    },
+    {
+      startTime: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")), 
+      title: "CLM is born",
+      id: "sb-7"
+    },
+    {
+      startTime: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")), 
+      title: "CLM is born",
+      id: "sb-8"
+    },
+    {
+      startTime: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")), 
+      title: "CLM is born",
+      id: "sb-9"
+    },
+    {
+      startTime: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")), 
+      title: "CLM is born",
+      id: "sb-10"
     }
   ]
   }

@@ -9,7 +9,8 @@ describe("<WeekRow />", () => {
   const mockProps: WeekRowProps = {
     weekStartDate: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")).startOf("week"),
     selectedDate: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")),
-    setSelectedDate: jest.fn()
+    setSelectedDate: jest.fn(),
+    events: []
   }
   beforeEach(() => {
     render(

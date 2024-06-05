@@ -9,6 +9,7 @@ describe("<DayOfMonth />", () => {
     selectedDate: DateTime.fromJSDate(new Date("1986-10-12T01:43:00")),
     setSelectedDate: jest.fn(),
     dayOfMonthDate: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")),
+    events: []
   }
   beforeEach(() => {
     render(
@@ -52,8 +53,19 @@ describe("<DayOfMonth />", () => {
         id: "id-1",
       },
       {
-        startTime: DateTime.fromJSDate(new Date("1986-10-13T01:42:00")),
+        startTime: DateTime.fromJSDate(new Date("1986-10-13T02:42:00")),
         title: "Dad goes to the toilet",
+        id: "id-2",
+      },
+      {
+        startTime: DateTime.fromJSDate(new Date("1986-10-13T03:42:00")),
+        title: "Dad returns from toilet",
+        id: "id-3",
+        
+      },
+      {
+        startTime: DateTime.fromJSDate(new Date("1986-10-13T04:42:00")),
+        title: "Another event",
         id: "id-2",
       },
     ]
@@ -85,8 +97,8 @@ describe("<DayOfMonth />", () => {
     })
     expect(mockProps.setSelectedDate).toHaveBeenCalledWith(mockProps.dayOfMonthDate)
   })
-  it("events are sorted in correct order", () => {
+  it("events are sorted in correct order, only first three are shown with indication of others", () => {
     const dayOfMonth = screen.getByTestId(`${mockProps.dayOfMonthDate.toLocaleString()}-tile`)
-    expect(dayOfMonth.textContent).toMatch(/^131:42 AMDad goes to the toilet1:43 AMCLM is born$/)
+    expect(dayOfMonth.textContent).toMatch(/^131:43 AMCLM is born2:42 AMDad goes to the toilet3:42 AMDad returns from toilet& 1 more$/)
   })
 })

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import MonthCalendar from "../../src/components/monthCalendar";
+import MonthCalendar, { MonthCalendarProps } from "../../src/components/monthCalendar";
 import "@testing-library/jest-dom"
 import { DateTime } from "luxon";
 
@@ -7,7 +7,8 @@ import { DateTime } from "luxon";
 describe("<MonthCalendar", () => {
   const mockProps: MonthCalendarProps = {
     selectedDate: new Date("1986-10-13T01:43:00"),
-    setSelectedDate: jest.fn()
+    setSelectedDate: jest.fn(),
+    events: []
   }
   beforeEach(() => {
     render(<MonthCalendar {...mockProps} />)
@@ -62,7 +63,7 @@ describe("<MonthCalendar />", () => {
   it("events are filtered to correct days", () => {
     if (mockProps.events) {
       for (let i = 0; i < mockProps.events!.length; i ++) {
-        const dayOfMonth = screen.getByTestId(`${mockProps.events[i]?.startTime.toLocaleString()}-tile`)
+        const dayOfMonth = screen.getByTestId(`${DateTime.fromJSDate(mockProps.events[i]!.startTime).toLocaleString()}-tile`)
         expect(dayOfMonth.textContent).toMatch(mockProps.events[i]!.title)
       }
     }

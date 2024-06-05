@@ -5,7 +5,7 @@ import MonthHeader, { MonthHeaderProps } from "../../src/components/monthCalenda
 
 const mockProps: MonthHeaderProps = {
   selectedDate: DateTime.fromJSDate(new Date("1986-10-13T01:43:00")),
-  setSelectedDate: jest.fn()
+  setSelectedDate: jest.fn(),
 }
 
 describe("<MonthHeader />", () => {
@@ -26,7 +26,7 @@ describe("<MonthHeader />", () => {
   })
   it("previous month btn is in the document and calls setSelectedDate with arg", () => {
     const previousMonthBtn = screen.getByTestId("previous-month-button")
-    expect(previousMonthBtn.textContent).toMatch("Previous Month")
+    expect(previousMonthBtn).toHaveAttribute("value", "Previous Month")
 
     expect(previousMonthBtn).toBeInTheDocument()
     act(() => {
@@ -36,7 +36,7 @@ describe("<MonthHeader />", () => {
   })
   it("next month btn is in the document and calls setSelectedDate with arg", () => {
     const nextMonthBtn = screen.getByTestId("next-month-button")
-    expect(nextMonthBtn.textContent).toMatch("Next Month")
+    expect(nextMonthBtn).toHaveAttribute("value", "Next Month")
     expect(nextMonthBtn).toBeInTheDocument()
     act(() => {
       fireEvent.click(nextMonthBtn)

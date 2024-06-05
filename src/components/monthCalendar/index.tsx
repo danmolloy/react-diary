@@ -15,6 +15,14 @@ const getCalendarWeeks = (firstOfMonth: DateTime): DateTime[] => {
   return weekArr
 }
 
+/**
+ * MonthCalendar Component
+ *
+ * @param {Date} selectedDate - The currently selected date.
+ * @param {Function} setSelectedDate - Function to set the selected date.
+ * @param {EventObject[]} [events] - Optional array of events.
+ *
+*/
 export default function MonthCalendar(props: MonthCalendarProps): JSX.Element {
   const { selectedDate, setSelectedDate, events } = props;
   //const [localDate, setLocalDate] = useState<DateTime>(DateTime.now())

@@ -10,7 +10,11 @@ declare global {
   type MonthCalendarProps = {
     selectedDate: Date
     setSelectedDate: (arg: Date) => void
-    events?: EventObject[]
+    events?: {
+      startTime: Date
+      title: string
+      id: string
+      }[]
   }
 }
 

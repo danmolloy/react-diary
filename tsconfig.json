@@ -17,7 +17,7 @@
     "emitDeclarationOnly": true,
     "sourceMap": true,
     "outDir": "dist",
-    "declarationDir": "types",
+    "declarationDir": "./dist/types", //"types",
     
     /* Interop Constraints */
     "allowSyntheticDefaultImports": true,

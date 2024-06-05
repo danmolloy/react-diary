@@ -1,6 +1,5 @@
 # React Diary
 
-## Overview
 React Diary aims to simplify scheduling and diary maintainance. Currently, it exports an event-integrated month-view calendar component.
 
 ## Installation

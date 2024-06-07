@@ -35,7 +35,6 @@ describe("<MonthCalendar", () => {
     const daysHeader = screen.getByTestId("days-header")
     expect(daysHeader).toBeInTheDocument()
   })
-  it("renders without events", () => {})
 })
 
 describe("<MonthCalendar />", () => {

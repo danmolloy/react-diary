@@ -15,7 +15,7 @@ export type MonthCalendarProps = {
   events: Event[]
 }
 
-const getCalendarWeeks = (firstOfMonth: DateTime): DateTime[] => {
+export const getCalendarWeeks = (firstOfMonth: DateTime): DateTime[] => {
   const firstWeekMonday = firstOfMonth.startOf('week');
   const lastWeekMonday = firstOfMonth.endOf('month').startOf('week');
   let weekArr: DateTime[] = []
@@ -32,7 +32,7 @@ const getCalendarWeeks = (firstOfMonth: DateTime): DateTime[] => {
  *
  * @param {Date} selectedDate - The currently selected date.
  * @param {Function} setSelectedDate - Function to set the selected date.
- * @param {EventObject[]} [events] - Array of events. If no events, pass an empty array.
+ * @param {EventObject[]} [events] - Array of events. Ensure each event has a unique ID. If no events, pass an empty array.
  *
 */
 export default function MonthCalendar(props: MonthCalendarProps): JSX.Element {

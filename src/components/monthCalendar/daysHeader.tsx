@@ -1,4 +1,4 @@
-const daysArr: {day: string, key: number}[] = [
+export const daysArr: {day: string, key: number}[] = [
   {
     day: 'Monday',
     key: 1,

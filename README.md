@@ -1,6 +1,6 @@
 # React Diary
 
-Simplifying scheduling and diary maintainance in React. Currently, it exports an event-integrated month-view calendar component.
+Simplifying scheduling and diary maintainance in React. It exports two components: an event-integrated month-view calendar and a compact date-picker.
 
 Check out the [live example](https://react-diary-example.vercel.app/).
 
@@ -23,22 +23,35 @@ export default function Calendar() {
   const [selectedDate, setSelectedDate] = useState<Date>(new Date("1986-10-12T03:24:00"));
 
   return (
-    <MonthCalendar
-      selectedDate={selectedDate}
-      setSelectedDate={(date: Date) => setSelectedDate(date)} 
-      events={[
-        {
-          startTime: new Date("1986-10-13T03:24:00"),
-          title: "CLM is born",
-          id: "event-1"
-        }
-      ]} /> 
+    <div>
+      <MonthCalendar
+        selectedDate={selectedDate}
+        setSelectedDate={(date: Date) => setSelectedDate(date)} 
+        events={[
+          {
+            startTime: new Date("1986-10-13T03:24:00"),
+            title: "CLM is born",
+            id: "event-1"
+          }
+        ]} /> 
+
+        <DatePicker 
+          selectedDate={selectedDate}
+          setSelectedDate={(date: Date) => setSelectedDate(date)} 
+          events={[
+            {
+              startTime: new Date("1986-10-13T03:24:00"),
+              title: "CLM is born",
+              id: "event-1"
+            }
+          ]} />
+      </div>
   );
 }
 ```
 
 ## Props
-`<MonthCalendar /> Props:`
+`<MonthCalendar /> and <DatePicker /> Props:`
 |Prop	                      |Type	                                           |Description                                      |
 |--------------------------|-------------------------------------------------|-------------------------------------------------|
 |selectedDate (Required)	 |Date	                                           |The currently selected date in the calendar.     |

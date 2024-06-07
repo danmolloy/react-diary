@@ -17,7 +17,7 @@ Ensure you have a recent version of `react` and `react-dom` installed in your pr
 ```
 'use client' // Required if using NextJS 14 or higher
 import { useState } from "react";
-import { MonthCalendar } from "react-diary";
+import { MonthCalendar, DatePicker } from "react-diary";
 
 export default function Calendar() {
   const [selectedDate, setSelectedDate] = useState<Date>(new Date("1986-10-12T03:24:00"));
